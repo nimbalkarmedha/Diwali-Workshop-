@@ -81,26 +81,26 @@ footer a{color:var(--accent2)}
 <details><summary>Greeting Card</summary>
 <ul><li>Fold the card and draw a Diwali design</li><li>Decorate and write a wish</li><li>Give it to family or friends</li></ul></details>
 <div class="value"><h3>Why ₹600 is worth it</h3>
-<ul><li>6 finished items, so about ₹100 per item</li><li>All materials are included. You buy nothing extra.</li><li>2 days of guided craft time, 3 hours each day</li><li>Your child brings home décor made by their own hands</li><li>No art experience needed. All kids are welcome.</li></ul></div>
+<ul><li>6 finished items, so about ₹100 per item</li><li>All materials are included. You buy nothing extra.</li><li>2 days of guided craft time, 3 hours each day</li><li>Your child brings home finished crafts to share with family.</li></ul></div>
 </section>
 
 <section>
 <h2>Workshop details</h2>
 <div class="facts">
 <div class="row"><span>Dates</span><b>Oct 31 &amp; Nov 1</b></div>
-<div class="row"><span>Venue</span><b>Crestal Ground</b></div>
+<div class="row"><span>Venue</span><b>Crystal Ground</b></div>
 <div class="row"><span>Saturday</span><b>4 PM – 7 PM</b></div>
 <div class="row"><span>Sunday</span><b>9 AM – 12 PM</b></div>
 <div class="row"><span>Age</span><b>Open for all kids</b></div>
 <div class="row"><span>Fee (all materials included)</span><span class="price">₹600</span></div>
 </div>
-<div class="note">📍 I will be at Crestal Ground tomorrow. Come meet me for spot admission and questions!</div>
+<div class="note">📍 I will be at Crystal Ground tomorrow. Come meet me for spot admission and questions!</div>
 </section>
 
 <section>
 <h2>Workshop conditions</h2>
 <div class="facts">
-<div class="row"><span>Venue: Crestal Ground</span></div>
+<div class="row"><span>Venue: Crystal Ground</span></div>
 <div class="row"><span>Fee ₹600 per child, paid at registration to confirm the seat</span></div>
 <div class="row"><span>Attend both days (Saturday and Sunday) to finish all 6 items</span></div>
 <div class="row"><span>Please arrive 10 minutes before the start time</span></div>
@@ -164,7 +164,7 @@ var err=document.getElementById('err');
 if(!g('parent')||!g('child')||!g('age')||!g('phone')){err.textContent='Please fill in parent name, child name, age and phone number.';return}
 if(g('phone').replace(/\D/g,'').length<10){err.textContent='Enter a valid 10-digit phone number.';return}
 err.textContent='';
-var t='Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\nParent: '+g('parent')+'\nChild: '+g('child')+'\nAge: '+g('age')+'\nNo. of kids: '+g('count')+'\nDates: Oct 31 & Nov 1 at Crestal Ground\nPhone: '+g('phone')+(g('msg')?'\nQuestion: '+g('msg'):'');
+var t='Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\nParent: '+g('parent')+'\nChild: '+g('child')+'\nAge: '+g('age')+'\nNo. of kids: '+g('count')+'\nDates: Oct 31 & Nov 1\nVenue: Crystal Ground\nPhone: '+g('phone')+(g('msg')?'\nQuestion: '+g('msg'):'');
 window.open('https://wa.me/918788344732?text='+encodeURIComponent(t),'_blank');
 });
 document.getElementById('sf').addEventListener('submit',function(e){
