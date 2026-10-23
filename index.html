@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kids Diwali Art &amp; Craft Workshop</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<title>Kids Diwali Art & Craft Workshop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap">
 <style>
-:root{--bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f0d2e;--ink:#fff1d6;--card:#2e1745;--accent:#ff8a3d;--accent2:#c79bff;--gold:#ffc83d;--line:#4a2d6b;--ok:#5ad08a}}
 :root[data-theme="dark"]{--bg:#1f0d2e;--ink:#fff1d6;--card:#2e1745;--accent:#ff8a3d;--accent2:#c79bff;--gold:#ffc83d;--line:#4a2d6b;--ok:#5ad08a}
 *,*::before,*::after{box-sizing:inherit}
@@ -54,7 +53,7 @@ footer a{color:var(--accent2)}
 <body>
 <header class="hero"><div class="wrap">
 <span class="alert">🚨 Last 2 Days to Register!</span>
-<h1>Kids Diwali Art &amp; Craft Workshop 🪔</h1>
+<h1>Kids Diwali Art & Craft Workshop 🪔</h1>
 <p>Parents, the festival of lights is just around the corner. Don’t let your child miss the most creative and fun Diwali workshop in town.</p>
 <a class="btn" href="#register">Register your child</a>
 </div></header>
@@ -81,7 +80,7 @@ footer a{color:var(--accent2)}
 <details><summary>Greeting Card</summary>
 <ul><li>Fold the card and draw a Diwali design</li><li>Decorate and write a wish</li><li>Give it to family or friends</li></ul></details>
 <div class="value"><h3>Why ₹600 is worth it</h3>
-<ul><li>6 finished items, so about ₹100 per item</li><li>All materials are included. You buy nothing extra.</li><li>2 days of guided craft time, 3 hours each day</li><li>Your child brings home décor made by their own hands</li><li>No art experience needed. All kids are welcome.</li></ul></div>
+<ul><li>6 finished items, so about ₹100 per item</li><li>All materials are included. You buy nothing extra.</li><li>2 days of guided craft time, 3 hours each day</li><li>Your child brings home finished crafts to share with family.</li></ul></div>
 </section>
 
 <section>
@@ -110,41 +109,44 @@ footer a{color:var(--accent2)}
 
 <section id="register">
 <h2>Register now</h2>
-<form id="f" novalidate>
+<form id="f" method="POST" action="" novalidate>
 <label for="parent">Parent’s name</label>
-<input id="parent" autocomplete="name" required>
+<input id="parent" name="parent_name" autocomplete="name" required>
 <label for="child">Child’s name</label>
-<input id="child" required>
+<input id="child" name="child_name" required>
 <div class="two">
-<div><label for="age">Child’s age</label><input id="age" type="number" min="2" max="18" inputmode="numeric" required></div>
-<div><label for="count">No. of kids</label><input id="count" type="number" min="1" max="10" value="1" inputmode="numeric" required></div>
+<div><label for="age">Child’s age</label><input id="age" name="child_age" type="number" min="2" max="18" inputmode="numeric" required></div>
+<div><label for="count">No. of kids</label><input id="count" name="no_of_kids" type="number" min="1" max="10" value="1" inputmode="numeric" required></div>
 </div>
 <label for="phone">Your phone / WhatsApp number</label>
-<input id="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
 <label for="msg">Question (optional)</label>
-<textarea id="msg" rows="2"></textarea>
+<textarea id="msg" name="message" rows="2"></textarea>
+<input type="hidden" name="category" value="Registration">
+<input type="hidden" name="preferred_dates" value="Not provided">
 <p class="err" id="err" role="alert"></p>
 <button class="btn go" type="submit">Send registration on WhatsApp</button>
 <p class="hint">Tapping the button opens WhatsApp with your details filled in. Just press send to confirm your spot.</p>
 </form>
 </section>
+
 <section id="suggest">
 <h2>Suggestions or another date?</h2>
 <p style="margin:0 0 14px">Can’t make Oct 31 &amp; Nov 1, or have an idea for the workshop? Tell me and I will get back to you.</p>
-<form id="sf" novalidate>
+<form id="sf" method="POST" action="" novalidate>
 <label for="s-type">What would you like to share?</label>
-<select id="s-type">
+<select id="s-type" name="category">
 <option>I want another workshop date</option>
 <option>I have a suggestion</option>
 </select>
 <label for="s-name">Your name</label>
-<input id="s-name" autocomplete="name">
+<input id="s-name" name="name" autocomplete="name">
 <label for="s-phone">Phone / WhatsApp number</label>
-<input id="s-phone" type="tel" inputmode="tel" autocomplete="tel">
+<input id="s-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel">
 <label for="s-date">Preferred dates (if asking for another date)</label>
-<input id="s-date" placeholder="e.g. Sat &amp; Sun, 7 &amp; 8 Nov">
+<input id="s-date" name="preferred_dates" placeholder="e.g. Sat &amp; Sun, 7 &amp; 8 Nov">
 <label for="s-msg">Your message</label>
-<textarea id="s-msg" rows="3"></textarea>
+<textarea id="s-msg" name="message" rows="3"></textarea>
 <p class="err" id="s-err" role="alert"></p>
 <button class="btn go" type="submit">Send message on WhatsApp</button>
 </form>
@@ -157,25 +159,114 @@ Let’s make this Diwali super special for your kids! 🚀
 </footer>
 
 <script>
-document.getElementById('f').addEventListener('submit',function(e){
-e.preventDefault();
-var g=function(i){return document.getElementById(i).value.trim()};
-var err=document.getElementById('err');
-if(!g('parent')||!g('child')||!g('age')||!g('phone')){err.textContent='Please fill in parent name, child name, age and phone number.';return}
-if(g('phone').replace(/\D/g,'').length<10){err.textContent='Enter a valid 10-digit phone number.';return}
-err.textContent='';
-var t='Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\nParent: '+g('parent')+'\nChild: '+g('child')+'\nAge: '+g('age')+'\nNo. of kids: '+g('count')+'\nDates: Oct 31 & Nov 1 at Crestal Ground\nPhone: '+g('phone')+(g('msg')?'\nQuestion: '+g('msg'):'');
-window.open('https://wa.me/918788344732?text='+encodeURIComponent(t),'_blank');
+const scriptUrl = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+function getValue(id){return document.getElementById(id).value.trim();}
+function validPhone(value){return value.replace(/\D/g,'').length >= 10;}
+
+function openWhatsAppReg(parent, child, age, count, phone, msg){
+  var txt='Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\n'+
+    'Parent: '+parent+'\n'+
+    'Child: '+child+'\n'+
+    'Age: '+age+'\n'+
+    'No. of kids: '+(count || '1')+'\n'+
+    'Dates: Oct 31 & Nov 1\n'+
+    'Venue: Crestal Ground\n'+
+    'Phone: '+phone+
+    (msg ? '\nQuestion: '+msg : '');
+  window.open('https://wa.me/918788344732?text=' + encodeURIComponent(txt), '_blank');
+}
+
+function openWhatsAppSuggest(name, phone, type, date, msg){
+  var txt='Hello Medha, '+type+' (Kids Diwali Art & Craft Workshop).\n\n'+
+    'Name: '+name+'\n'+
+    'Phone: '+phone+
+    (date ? '\nPreferred dates: '+date : '')+
+    (msg ? '\nMessage: '+msg : '');
+  window.open('https://wa.me/918788344732?text=' + encodeURIComponent(txt), '_blank');
+}
+
+async function submitToScript(form, payload, successMessage){
+  if (!scriptUrl || scriptUrl.indexOf('PASTE_YOUR_GOOGLE_APPS_SCRIPT') !== -1) {
+    return false;
+  }
+  try {
+    const res = await fetch(scriptUrl, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(payload).toString()
+    });
+    if (!res.ok) throw new Error('Request failed');
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+document.getElementById('f').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var parent=getValue('parent');
+  var child=getValue('child');
+  var age=getValue('age');
+  var count=getValue('count');
+  var phone=getValue('phone');
+  var msg=getValue('msg');
+  var err=document.getElementById('err');
+
+  if(!parent || !child || !age || !phone){err.textContent='Please fill in parent name, child name, age and phone number.';return;}
+  if(!validPhone(phone)){err.textContent='Enter a valid 10-digit phone number.';return;}
+  err.textContent='';
+
+  var payload={
+    parent_name: parent,
+    child_name: child,
+    child_age: age,
+    no_of_kids: count || '1',
+    phone: phone,
+    message: msg || 'No message',
+    category: 'Registration',
+    preferred_dates: 'Not provided'
+  };
+
+  var posted = await submitToScript(this, payload, 'Registration saved.');
+  if (!posted) {
+    openWhatsAppReg(parent, child, age, count, phone, msg);
+    return;
+  }
+
+  openWhatsAppReg(parent, child, age, count, phone, msg);
 });
-document.getElementById('sf').addEventListener('submit',function(e){
-e.preventDefault();
-var g=function(i){return document.getElementById(i).value.trim()};
-var err=document.getElementById('s-err');
-if(!g('s-name')||!g('s-phone')){err.textContent='Please enter your name and phone number.';return}
-if(!g('s-msg')&&!g('s-date')){err.textContent='Please write your message or preferred dates.';return}
-err.textContent='';
-var t='Hello Medha, '+g('s-type')+' (Kids Diwali Art & Craft Workshop).\n\nName: '+g('s-name')+'\nPhone: '+g('s-phone')+(g('s-date')?'\nPreferred dates: '+g('s-date'):'')+(g('s-msg')?'\nMessage: '+g('s-msg'):'');
-window.open('https://wa.me/918788344732?text='+encodeURIComponent(t),'_blank');
+
+document.getElementById('sf').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var name=getValue('s-name');
+  var phone=getValue('s-phone');
+  var date=getValue('s-date');
+  var msg=getValue('s-msg');
+  var type=document.getElementById('s-type').value;
+  var err=document.getElementById('s-err');
+
+  if(!name || !phone){err.textContent='Please enter your name and phone number.';return;}
+  if(!validPhone(phone)){err.textContent='Enter a valid 10-digit phone number.';return;}
+  if(!msg && !date){err.textContent='Please write your message or preferred dates.';return;}
+  err.textContent='';
+
+  var payload={
+    name: name,
+    phone: phone,
+    preferred_dates: date || 'Not provided',
+    message: msg || 'No message',
+    category: type
+  };
+
+  var posted = await submitToScript(this, payload, 'Suggestion saved.');
+  if (!posted) {
+    openWhatsAppSuggest(name, phone, type, date, msg);
+    return;
+  }
+
+  openWhatsAppSuggest(name, phone, type, date, msg);
 });
 </script>
 </body>
