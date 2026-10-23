@@ -1,28 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kids Diwali Art & Craft Workshop</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap">
+<title>Kids Diwali Art &amp; Craft Workshop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;800&amp;display=swap">
 <style>
-:root{
-  --bg:#fff6e5;
-  --ink:#3a1450;
-  --card:#ffffff;
-  --accent:#e8590c;
-  --accent2:#7b2cbf;
-  --gold:#f5a800;
-  --line:#f0d9b0;
-  --ok:#1f8a4c;
-  color-scheme:light;
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px);
-  padding-bottom:env(safe-area-inset-bottom,0px)
-}
-:root[data-theme="dark"]{
-  --bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c
-}
+:root{--bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f0d2e;--ink:#fff1d6;--card:#2e1745;--accent:#ff8a3d;--accent2:#c79bff;--gold:#ffc83d;--line:#4a2d6b;--ok:#5ad08a}}
+:root[data-theme="dark"]{--bg:#1f0d2e;--ink:#fff1d6;--card:#2e1745;--accent:#ff8a3d;--accent2:#c79bff;--gold:#ffc83d;--line:#4a2d6b;--ok:#5ad08a}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;font-size:17px;line-height:1.5}
@@ -67,7 +54,7 @@ footer a{color:var(--accent2)}
 <body>
 <header class="hero"><div class="wrap">
 <span class="alert">🚨 Last 2 Days to Register!</span>
-<h1>Kids Diwali Art & Craft Workshop 🪔</h1>
+<h1>Kids Diwali Art &amp; Craft Workshop 🪔</h1>
 <p>Parents, the festival of lights is just around the corner. Don’t let your child miss the most creative and fun Diwali workshop in town.</p>
 <a class="btn" href="#register">Register your child</a>
 </div></header>
@@ -94,26 +81,26 @@ footer a{color:var(--accent2)}
 <details><summary>Greeting Card</summary>
 <ul><li>Fold the card and draw a Diwali design</li><li>Decorate and write a wish</li><li>Give it to family or friends</li></ul></details>
 <div class="value"><h3>Why ₹600 is worth it</h3>
-<ul><li>6 finished items, so about ₹100 per item</li><li>All materials are included. You buy nothing extra.</li><li>2 days of guided craft time, 3 hours each day</li><li>Your child brings home finished crafts to share with family.</li></ul></div>
+<ul><li>6 finished items, so about ₹100 per item</li><li>All materials are included. You buy nothing extra.</li><li>2 days of guided craft time, 3 hours each day</li><li>Your child brings home décor made by their own hands</li><li>No art experience needed. All kids are welcome.</li></ul></div>
 </section>
 
 <section>
 <h2>Workshop details</h2>
 <div class="facts">
 <div class="row"><span>Dates</span><b>Oct 31 &amp; Nov 1</b></div>
-<div class="row"><span>Venue</span><b>Crystal Ground</b></div>
+<div class="row"><span>Venue</span><b>Crestal Ground</b></div>
 <div class="row"><span>Saturday</span><b>4 PM – 7 PM</b></div>
 <div class="row"><span>Sunday</span><b>9 AM – 12 PM</b></div>
 <div class="row"><span>Age</span><b>Open for all kids</b></div>
 <div class="row"><span>Fee (all materials included)</span><span class="price">₹600</span></div>
 </div>
-<div class="note">📍 I will be at Crystal Ground tomorrow. Come meet me for spot admission and questions!</div>
+<div class="note">📍 I will be at Crestal Ground tomorrow. Come meet me for spot admission and questions!</div>
 </section>
 
 <section>
 <h2>Workshop conditions</h2>
 <div class="facts">
-<div class="row"><span>Venue: Crystal Ground</span></div>
+<div class="row"><span>Venue: Crestal Ground</span></div>
 <div class="row"><span>Fee ₹600 per child, paid at registration to confirm the seat</span></div>
 <div class="row"><span>Attend both days (Saturday and Sunday) to finish all 6 items</span></div>
 <div class="row"><span>Please arrive 10 minutes before the start time</span></div>
@@ -141,7 +128,6 @@ footer a{color:var(--accent2)}
 <p class="hint">Tapping the button opens WhatsApp with your details filled in. Just press send to confirm your spot.</p>
 </form>
 </section>
-
 <section id="suggest">
 <h2>Suggestions or another date?</h2>
 <p style="margin:0 0 14px">Can’t make Oct 31 &amp; Nov 1, or have an idea for the workshop? Tell me and I will get back to you.</p>
@@ -171,112 +157,25 @@ Let’s make this Diwali super special for your kids! 🚀
 </footer>
 
 <script>
-function getValue(id){
-  return document.getElementById(id).value.trim();
-}
-function validPhone(value){
-  return value.replace(/\D/g, '').length >= 10;
-}
-
-function openMailTo(subject, body){
-  const mailto = 'mailto:nimbalkarmedha@gmail.com' +
-    '?subject=' + encodeURIComponent(subject) +
-    '&body=' + encodeURIComponent(body);
-
-  window.location.href = mailto;
-}
-
-document.getElementById('f').addEventListener('submit', function(e){
-  e.preventDefault();
-
-  var parent = getValue('parent');
-  var child = getValue('child');
-  var age = getValue('age');
-  var count = getValue('count');
-  var phone = getValue('phone');
-  var msg = getValue('msg');
-  var err = document.getElementById('err');
-
-  if (!parent || !child || !age || !phone) {
-    err.textContent = 'Please fill in parent name, child name, age and phone number.';
-    return;
-  }
-
-  if (!validPhone(phone)) {
-    err.textContent = 'Enter a valid 10-digit phone number.';
-    return;
-  }
-
-  err.textContent = '';
-
-  var emailBody =
-    'Parent: ' + parent + '\n' +
-    'Child: ' + child + '\n' +
-    'Age: ' + age + '\n' +
-    'No. of kids: ' + (count || '1') + '\n' +
-    'Phone: ' + phone + '\n' +
-    (msg ? 'Question: ' + msg + '\n' : '');
-
-  openMailTo('New Workshop Registration', emailBody);
-
-  var waText =
-    'Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\n' +
-    'Parent: ' + parent + '\n' +
-    'Child: ' + child + '\n' +
-    'Age: ' + age + '\n' +
-    'No. of kids: ' + (count || '1') + '\n' +
-    'Dates: Oct 31 & Nov 1\n' +
-    'Venue: Crystal Ground\n' +
-    'Phone: ' + phone +
-    (msg ? '\nQuestion: ' + msg : '');
-
-  window.open('https://wa.me/918788344732?text=' + encodeURIComponent(waText), '_blank');
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();
+var g=function(i){return document.getElementById(i).value.trim()};
+var err=document.getElementById('err');
+if(!g('parent')||!g('child')||!g('age')||!g('phone')){err.textContent='Please fill in parent name, child name, age and phone number.';return}
+if(g('phone').replace(/\D/g,'').length<10){err.textContent='Enter a valid 10-digit phone number.';return}
+err.textContent='';
+var t='Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\nParent: '+g('parent')+'\nChild: '+g('child')+'\nAge: '+g('age')+'\nNo. of kids: '+g('count')+'\nDates: Oct 31 & Nov 1 at Crestal Ground\nPhone: '+g('phone')+(g('msg')?'\nQuestion: '+g('msg'):'');
+window.open('https://wa.me/918788344732?text='+encodeURIComponent(t),'_blank');
 });
-
-document.getElementById('sf').addEventListener('submit', function(e){
-  e.preventDefault();
-
-  var name = getValue('s-name');
-  var phone = getValue('s-phone');
-  var date = getValue('s-date');
-  var message = getValue('s-msg');
-  var type = document.getElementById('s-type').value;
-  var err = document.getElementById('s-err');
-
-  if (!name || !phone) {
-    err.textContent = 'Please enter your name and phone number.';
-    return;
-  }
-
-  if (!validPhone(phone)) {
-    err.textContent = 'Enter a valid 10-digit phone number.';
-    return;
-  }
-
-  if (!message && !date) {
-    err.textContent = 'Please write your message or preferred dates.';
-    return;
-  }
-
-  err.textContent = '';
-
-  var emailBody =
-    'Name: ' + name + '\n' +
-    'Phone: ' + phone + '\n' +
-    (date ? 'Preferred dates: ' + date + '\n' : '') +
-    (message ? 'Message: ' + message + '\n' : '') +
-    'Category: ' + type;
-
-  openMailTo('Workshop Suggestion / Alternative Date', emailBody);
-
-  var waText =
-    'Hello Medha, ' + type + ' (Kids Diwali Art & Craft Workshop).\n\n' +
-    'Name: ' + name + '\n' +
-    'Phone: ' + phone +
-    (date ? '\nPreferred dates: ' + date : '') +
-    (message ? '\nMessage: ' + message : '');
-
-  window.open('https://wa.me/918788344732?text=' + encodeURIComponent(waText), '_blank');
+document.getElementById('sf').addEventListener('submit',function(e){
+e.preventDefault();
+var g=function(i){return document.getElementById(i).value.trim()};
+var err=document.getElementById('s-err');
+if(!g('s-name')||!g('s-phone')){err.textContent='Please enter your name and phone number.';return}
+if(!g('s-msg')&&!g('s-date')){err.textContent='Please write your message or preferred dates.';return}
+err.textContent='';
+var t='Hello Medha, '+g('s-type')+' (Kids Diwali Art & Craft Workshop).\n\nName: '+g('s-name')+'\nPhone: '+g('s-phone')+(g('s-date')?'\nPreferred dates: '+g('s-date'):'')+(g('s-msg')?'\nMessage: '+g('s-msg'):'');
+window.open('https://wa.me/918788344732?text='+encodeURIComponent(t),'_blank');
 });
 </script>
 </body>
