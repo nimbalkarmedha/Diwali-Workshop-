@@ -3,11 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kids Diwali Art &amp; Craft Workshop</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<title>Kids Diwali Art & Craft Workshop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap">
 <style>
-:root{--bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-:root[data-theme="dark"]{--bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c}
+:root{
+  --bg:#fff6e5;
+  --ink:#3a1450;
+  --card:#ffffff;
+  --accent:#e8590c;
+  --accent2:#7b2cbf;
+  --gold:#f5a800;
+  --line:#f0d9b0;
+  --ok:#1f8a4c;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+:root[data-theme="dark"]{
+  --bg:#fff6e5;--ink:#3a1450;--card:#ffffff;--accent:#e8590c;--accent2:#7b2cbf;--gold:#f5a800;--line:#f0d9b0;--ok:#1f8a4c
+}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;font-size:17px;line-height:1.5}
@@ -52,7 +67,7 @@ footer a{color:var(--accent2)}
 <body>
 <header class="hero"><div class="wrap">
 <span class="alert">🚨 Last 2 Days to Register!</span>
-<h1>Kids Diwali Art &amp; Craft Workshop 🪔</h1>
+<h1>Kids Diwali Art & Craft Workshop 🪔</h1>
 <p>Parents, the festival of lights is just around the corner. Don’t let your child miss the most creative and fun Diwali workshop in town.</p>
 <a class="btn" href="#register">Register your child</a>
 </div></header>
@@ -126,6 +141,7 @@ footer a{color:var(--accent2)}
 <p class="hint">Tapping the button opens WhatsApp with your details filled in. Just press send to confirm your spot.</p>
 </form>
 </section>
+
 <section id="suggest">
 <h2>Suggestions or another date?</h2>
 <p style="margin:0 0 14px">Can’t make Oct 31 &amp; Nov 1, or have an idea for the workshop? Tell me and I will get back to you.</p>
@@ -154,33 +170,114 @@ Questions? WhatsApp <a href="https://wa.me/918788344732">8788344732</a> (Medha N
 Let’s make this Diwali super special for your kids! 🚀
 </footer>
 
-<button type="submit" onclick="sendEmailFallback()">Send registration</button>
-
 <script>
-function sendEmailFallback() {
-  const parent = document.getElementById('parent').value.trim();
-  const child = document.getElementById('child').value.trim();
-  const age = document.getElementById('age').value.trim();
-  const count = document.getElementById('count').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const msg = document.getElementById('msg').value.trim();
-
-  const body = [
-    'Parent: ' + parent,
-    'Child: ' + child,
-    'Age: ' + age,
-    'No. of kids: ' + count,
-    'Phone: ' + phone,
-    'Message: ' + (msg || 'No message')
-  ].join('\n');
-
-  window.location.href =
-    'mailto:nimbalkarmedha@gmail.com?subject=' +
-    encodeURIComponent('Workshop Registration') +
-    '&body=' + encodeURIComponent(body);
+function getValue(id){
+  return document.getElementById(id).value.trim();
 }
+function validPhone(value){
+  return value.replace(/\D/g, '').length >= 10;
+}
+
+function openMailTo(subject, body){
+  const mailto = 'mailto:nimbalkarmedha@gmail.com' +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+
+  window.location.href = mailto;
+}
+
+document.getElementById('f').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  var parent = getValue('parent');
+  var child = getValue('child');
+  var age = getValue('age');
+  var count = getValue('count');
+  var phone = getValue('phone');
+  var msg = getValue('msg');
+  var err = document.getElementById('err');
+
+  if (!parent || !child || !age || !phone) {
+    err.textContent = 'Please fill in parent name, child name, age and phone number.';
+    return;
+  }
+
+  if (!validPhone(phone)) {
+    err.textContent = 'Enter a valid 10-digit phone number.';
+    return;
+  }
+
+  err.textContent = '';
+
+  var emailBody =
+    'Parent: ' + parent + '\n' +
+    'Child: ' + child + '\n' +
+    'Age: ' + age + '\n' +
+    'No. of kids: ' + (count || '1') + '\n' +
+    'Phone: ' + phone + '\n' +
+    (msg ? 'Question: ' + msg + '\n' : '');
+
+  openMailTo('New Workshop Registration', emailBody);
+
+  var waText =
+    'Hello Medha, I want to register for the Kids Diwali Art & Craft Workshop.\n\n' +
+    'Parent: ' + parent + '\n' +
+    'Child: ' + child + '\n' +
+    'Age: ' + age + '\n' +
+    'No. of kids: ' + (count || '1') + '\n' +
+    'Dates: Oct 31 & Nov 1\n' +
+    'Venue: Crystal Ground\n' +
+    'Phone: ' + phone +
+    (msg ? '\nQuestion: ' + msg : '');
+
+  window.open('https://wa.me/918788344732?text=' + encodeURIComponent(waText), '_blank');
+});
+
+document.getElementById('sf').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  var name = getValue('s-name');
+  var phone = getValue('s-phone');
+  var date = getValue('s-date');
+  var message = getValue('s-msg');
+  var type = document.getElementById('s-type').value;
+  var err = document.getElementById('s-err');
+
+  if (!name || !phone) {
+    err.textContent = 'Please enter your name and phone number.';
+    return;
+  }
+
+  if (!validPhone(phone)) {
+    err.textContent = 'Enter a valid 10-digit phone number.';
+    return;
+  }
+
+  if (!message && !date) {
+    err.textContent = 'Please write your message or preferred dates.';
+    return;
+  }
+
+  err.textContent = '';
+
+  var emailBody =
+    'Name: ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    (date ? 'Preferred dates: ' + date + '\n' : '') +
+    (message ? 'Message: ' + message + '\n' : '') +
+    'Category: ' + type;
+
+  openMailTo('Workshop Suggestion / Alternative Date', emailBody);
+
+  var waText =
+    'Hello Medha, ' + type + ' (Kids Diwali Art & Craft Workshop).\n\n' +
+    'Name: ' + name + '\n' +
+    'Phone: ' + phone +
+    (date ? '\nPreferred dates: ' + date : '') +
+    (message ? '\nMessage: ' + message : '');
+
+  window.open('https://wa.me/918788344732?text=' + encodeURIComponent(waText), '_blank');
+});
 </script>
-</body>
-</html>
 </body>
 </html>
